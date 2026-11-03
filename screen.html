@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Orientation API</title>
+</head>
+<body>
+
+    <h1>Screen Orientation API</h1>
+
+    <p>Orientacja ekranu: <span id="orientacja">---</span></p>
+    <p>Kąt obrotu: <span id="kat">---</span></p>
+
+    <script>
+        function sprawdzOrientacje() {
+            const typ = screen.orientation.type;
+            const kat = screen.orientation.angle;
+
+            if (typ.startsWith("portrait")) {
+                document.getElementById("orientacja").textContent =
+                    "Portrait (pionowa)";
+            } else if (typ.startsWith("landscape")) {
+                document.getElementById("orientacja").textContent =
+                    "Landscape (pozioma)";
+            }
+
+            document.getElementById("kat").textContent = kat + "°";
+        }
+
+        sprawdzOrientacje();
+
+        screen.orientation.addEventListener("change", sprawdzOrientacje);
+    </script>
+
+</body>
+</html>
