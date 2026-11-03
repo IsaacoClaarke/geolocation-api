@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibration API</title>
+</head>
+<body>
+
+    <h1>Vibration API</h1>
+
+    <button id="wibruj">Uruchom wibrację</button>
+
+    <p id="wynik"></p>
+
+    <script>
+        document.getElementById("wibruj").addEventListener("click", function () {
+            if ("vibrate" in navigator) {
+                const uruchomiono = navigator.vibrate(1000);
+
+                if (uruchomiono) {
+                    document.getElementById("wynik").textContent =
+                        "Uruchomiono wibrację na 1 sekundę";
+                } else {
+                    document.getElementById("wynik").textContent =
+                        "Nie udało się uruchomić wibracji";
+                }
+            } else {
+                document.getElementById("wynik").textContent =
+                    "Przeglądarka nie obsługuje Vibration API";
+            }
+        });
+    </script>
+
+</body>
+</html>
