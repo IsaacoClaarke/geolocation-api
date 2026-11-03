@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Motion API</title>
+</head>
+<body>
+
+    <h1>Device Motion API</h1>
+
+    <button id="start">Rozpocznij pomiar</button>
+    <button id="stop">Zatrzymaj pomiar</button>
+
+    <p id="status">Pomiar nieaktywny</p>
+
+    <h2>Przyspieszenie (m/s²)</h2>
+
+    <p>X: <span id="x">---</span></p>
+    <p>Y: <span id="y">---</span></p>
+    <p>Z: <span id="z">---</span></p>
+
+    <h2>Obroty (°/s)</h2>
+
+    <p>Alpha: <span id="alpha">---</span></p>
+    <p>Beta: <span id="beta">---</span></p>
+    <p>Gamma: <span id="gamma">---</span></p>
+
+    <script src="motion.js"></script>
+
+</body>
+</html>
